@@ -18,6 +18,31 @@ class TestSolution(unittest.TestCase):
             28
         )
 
+    def test3(self):
+        self.assertEqual(
+            self.S.uniquePathsWithObstacles([
+                [0, 0, 0],
+                [0, 1, 0],
+                [0, 0, 0]
+            ]),
+            2
+        )
+    def test4(self):
+        self.assertEqual(
+            self.S.uniquePathsWithObstacles([
+                [1, 0]
+            ]),
+            0
+        )
+    def test5(self):
+        self.assertEqual(
+            self.S.uniquePathsWithObstacles([
+                [0,0],
+                [1,1],
+                [0,0]
+            ]),
+            0
+        )
 
 if __name__ == "__main__":
     unittest.main()
