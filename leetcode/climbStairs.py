@@ -26,8 +26,10 @@ Explanation: There are three ways to climb to the top.
 
 '''
 
+
 class Solution:
     def climbStairs(self, n: int) -> int:
+        ''' Hi Leonardus Pisanus (Fibonacci Sequence)! '''
         m = [x+1 for x in range(n)]
         for i in range(2, n):
             m[i] = m[i-1]+m[i-2]
