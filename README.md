@@ -1,9 +1,5 @@
 # py-cases
 
-[Two sum](./two_sum/solution.py)
+[2020 June LeetCoding Challenge](./leetcode/challenge/june)
 
-[Three sum](./three_sum/solution.py)
-
-[Add two numbers](./add_two_numbers/solution.py)
-
-[Merge K sorted lists](./merge_k_sorted_lists/solution.py)
+[Problems](./leetcode/problems)

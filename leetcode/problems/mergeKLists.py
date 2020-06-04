@@ -15,34 +15,9 @@ Input:
 ]
 Output: 1->1->2->3->4->4->5->6
 '''
+import unittest
+from linkedList import ListNode
 
-class ListNode:
-    def __init__(self, val=0, next=None):
-        self.val = val
-        self.next = next
-
-    @classmethod
-    def linkedList(cls, s:str):
-        list = s.split('->')
-        if len(list) == 0:
-            return
-        root = cls(int(list[0]))
-        node = root
-        for i in range (1, len(list)):
-            node.next = cls(int(list[i]))
-            node = node.next
-        return root
-     
-    def __str__(self):
-        result = '{0}'.format(self.val)
-        node = self.next
-        while node:
-            result += '->{0}'.format(node.val)
-            node = node.next
-        return result
-    
-    def __eq__(self, other):
-        return (self.val == other.val) and (self.next.__eq__(other.next))
 
 
 class MinHeap:
@@ -104,3 +79,22 @@ class Solution:
                 minHeap.deleteMin()
             else:
                 minHeap.replaceMin(min.next)
+
+
+class TestSolution(unittest.TestCase):
+    def setUp(self):
+        self.S = Solution()
+
+    def test1(self):
+        self.assertEqual(
+            self.S.mergeKLists([
+                ListNode.linkedList('1->4->5'), 
+                ListNode.linkedList('1->3->4'),
+                ListNode.linkedList('2->6')
+            ]),
+            ListNode.linkedList('1->1->2->3->4->4->5->6')
+        )
+
+
+if __name__ == "__main__":
+    unittest.main()
