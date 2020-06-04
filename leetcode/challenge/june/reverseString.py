@@ -42,13 +42,21 @@ class Solution:
     #     for i in range(len(s) // 2):
     #         s[i], s[-i - 1] = s[-i - 1], s[i]
 
-    def reverseString(self, l: List[str]) -> None:
-        i=0
-        j=len(l)-1
-        while(i<j):
-            l[i],l[j]=l[j],l[i]
-            i+=1
-            j-=1
+    # def reverseString(self, l: List[str]) -> None:
+    #     i=0
+    #     j=len(l)-1
+    #     while(i<j):
+    #         l[i],l[j]=l[j],l[i]
+    #         i+=1
+    #         j-=1
+    
+    def reverseString(self, s):
+        def helper(left, right):
+            if left < right:
+                s[left], s[right] = s[right], s[left]
+                helper(left + 1, right - 1)
+
+        helper(0, len(s) - 1)
 
 
 class TestSolution(unittest.TestCase):
