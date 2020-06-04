@@ -43,9 +43,6 @@ class Solution:
     #         s[i], s[-i - 1] = s[-i - 1], s[i]
 
     def reverseString(self, l: List[str]) -> None:
-        """
-        Do not return anything, modify s in-place instead.
-        """
         i=0
         j=len(l)-1
         while(i<j):
