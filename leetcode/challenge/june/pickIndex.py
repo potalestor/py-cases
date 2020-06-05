@@ -30,6 +30,7 @@ from typing import List
 from itertools import accumulate 
 import bisect
 import random
+import itertools
 
 class Solution:
     def __init__(self, w: List[int]):
@@ -39,5 +40,7 @@ class Solution:
        return bisect.bisect_left(self.sum, self.sum[-1]* random.random())
         
 
+
 s = Solution([1, 3, 3, 4])
 print([s.pickIndex() for _ in range(10)])
+
